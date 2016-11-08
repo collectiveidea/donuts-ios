@@ -62,3 +62,45 @@ the next feature.
 $ git checkout master
 $ git pull
 ```
+#### Don't ignore the .gitignore file
+It's important to start a project with a good _.gitignore_ file. Especially an
+Xcode project. There are lots of files you want just for yourself and not the
+rest of the team.
+
+Here's an example of a standard Xcode .gitignore file [i] uses:
+ ```
+ .DS_Store
+
+ build/
+ DerivedData/
+
+ *.hmap
+ *.ipa
+ *.dSYM.zip
+ *.dSYM
+
+ ## Playgrounds
+ timeline.xctimeline
+ playground.xcworkspace
+
+ # Xcode
+
+ build/
+ *.pbxuser
+ !default.pbxuser
+ *.mode1v3
+ !default.mode1v3
+ *.mode2v3
+ !default.mode2v3
+ *.perspectivev3
+ !default.perspectivev3
+ xcuserdata
+ *.xccheckout
+ *.moved-aside
+ DerivedData
+ *.hmap
+ *.ipa
+ *.xcuserstate
+
+ Carthage/
+```
