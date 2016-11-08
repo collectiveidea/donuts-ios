@@ -97,12 +97,11 @@
 		A7ADED111DD2483600E8A35D /* Donuts-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A7ADED121DD2483600E8A35D /* AppDelegate.swift */,
-				A7ADED141DD2483600E8A35D /* ViewController.swift */,
-				A7ADED161DD2483600E8A35D /* Main.storyboard */,
+				A7ADED401DD24B9C00E8A35D /* Supporting Files */,
+				A7ADED431DD24BCF00E8A35D /* Views */,
+				A7ADED421DD24BC700E8A35D /* Models */,
+				A7ADED411DD24BAF00E8A35D /* Controllers */,
 				A7ADED191DD2483600E8A35D /* Assets.xcassets */,
-				A7ADED1B1DD2483600E8A35D /* LaunchScreen.storyboard */,
-				A7ADED1E1DD2483600E8A35D /* Info.plist */,
 			);
 			path = "Donuts-iOS";
 			sourceTree = "<group>";
@@ -123,6 +122,39 @@
 				A7ADED341DD2483600E8A35D /* Info.plist */,
 			);
 			path = "Donuts-iOSUITests";
+			sourceTree = "<group>";
+		};
+		A7ADED401DD24B9C00E8A35D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADED121DD2483600E8A35D /* AppDelegate.swift */,
+				A7ADED1B1DD2483600E8A35D /* LaunchScreen.storyboard */,
+				A7ADED1E1DD2483600E8A35D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7ADED411DD24BAF00E8A35D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADED141DD2483600E8A35D /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A7ADED421DD24BC700E8A35D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A7ADED431DD24BCF00E8A35D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7ADED161DD2483600E8A35D /* Main.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

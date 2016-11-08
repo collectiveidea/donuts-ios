@@ -112,3 +112,11 @@ Here's an example of a standard Xcode .gitignore file [i] uses:
 
  Carthage/
 ```
+
+#### Project Layout
+
+It's always good to keep your file groupings clean so that other developers can
+easily navigate the project. We like to keep our projects with the following
+groups:
+
+![Project Groups](project-groups.png)
