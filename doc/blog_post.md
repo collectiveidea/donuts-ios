@@ -62,6 +62,14 @@ the next feature.
 $ git checkout master
 $ git pull
 ```
+
+### Build the xcode project
+
+#### Create the project
+Now that we have a repository for our project, we can build the Xcode project. [i]
+uses Swift 3.0 whenever possible. So we'll choose that in our project wizard
+![Creating the Xcode Project](create-xcode-project.gif)
+
 #### Don't ignore the .gitignore file
 It's important to start a project with a good _.gitignore_ file. Especially an
 Xcode project. There are lots of files you want just for yourself and not the
