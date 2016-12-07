@@ -62,3 +62,68 @@ the next feature.
 $ git checkout master
 $ git pull
 ```
+
+### Build the xcode project
+
+#### Create the project
+Now that we have a repository for our project, we can build the Xcode project. [i]
+uses Swift 3.0 whenever possible. So we'll choose that in our project wizard
+![Creating the Xcode Project](create-xcode-project.gif)
+
+#### Don't ignore the .gitignore file
+It's important to start a project with a good _.gitignore_ file. Especially an
+Xcode project. There are lots of files you want just for yourself and not the
+rest of the team.
+
+Here's an example of a standard Xcode .gitignore file [i] uses:
+ ```
+ .DS_Store
+
+ build/
+ DerivedData/
+
+ *.hmap
+ *.ipa
+ *.dSYM.zip
+ *.dSYM
+
+ ## Playgrounds
+ timeline.xctimeline
+ playground.xcworkspace
+
+ # Xcode
+
+ build/
+ *.pbxuser
+ !default.pbxuser
+ *.mode1v3
+ !default.mode1v3
+ *.mode2v3
+ !default.mode2v3
+ *.perspectivev3
+ !default.perspectivev3
+ xcuserdata
+ *.xccheckout
+ *.moved-aside
+ DerivedData
+ *.hmap
+ *.ipa
+ *.xcuserstate
+
+ Carthage/
+```
+
+#### Project Layout
+
+It's always good to keep your file groupings clean so that other developers can
+easily navigate the project. We like to keep our projects with the following
+groups:
+
+![Project Groups](project-groups.png)
+
+
+
+
+ TODO:
+ * StyleGuide
+ * Carthage
