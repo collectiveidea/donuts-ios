@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
-		A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* ViewController.swift */; };
+		A7ADED151DD2483600E8A35D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
 		A7ADED1A1DD2483600E8A35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED191DD2483600E8A35D /* Assets.xcassets */; };
 		A7ADED1D1DD2483600E8A35D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED1B1DD2483600E8A35D /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7ADED141DD2483600E8A35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A7ADED171DD2483600E8A35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7ADED191DD2483600E8A35D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7ADED1C1DD2483600E8A35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		A7ADED411DD24BAF00E8A35D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7ADED141DD2483600E8A35D /* ViewController.swift */,
+				A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */,
+				A7ADED151DD2483600E8A35D /* WelcomeViewController.swift in Sources */,
 				A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +537,7 @@
 				A7ADED391DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7ADED3A1DD2483600E8A35D /* Build configuration list for PBXNativeTarget "Donuts-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +546,7 @@
 				A7ADED3C1DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7ADED3D1DD2483600E8A35D /* Build configuration list for PBXNativeTarget "Donuts-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +555,7 @@
 				A7ADED3F1DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
