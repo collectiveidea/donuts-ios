@@ -43,12 +43,18 @@
   * Now the Storyboard should look like this ![Your storyboard should now look like this](story-board-with-scenes.png)
   * Add Nav Controller to WelcomeViewController
     * Highlight "WelcomeViewController"
-
     * click "Editor > Embed in > Navigation Controller"
     * ![Now IB should look like this](added-nav-controller.png)
 
   * Link "Welcome" -> "Success"
+    * Ctrl-drag from "I'll Get Donuts" button to "SuccessViewController"
+      * Choose "Show segue"
   * Hand test in simulator
+    * Adding the nav broke it!
+      * It's important to hand-test
+
+  * Re-adjust placement and run again.
+    * ![This is what IB should look like now](fixed-placement.png)
 
 
 ### Writing tests around the workflow
