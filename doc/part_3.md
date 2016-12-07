@@ -42,7 +42,11 @@
 
   * Now the Storyboard should look like this ![Your storyboard should now look like this](story-board-with-scenes.png)
   * Add Nav Controller to WelcomeViewController
-    * In
+    * Highlight "WelcomeViewController"
+
+    * click "Editor > Embed in > Navigation Controller"
+    * ![Now IB should look like this](added-nav-controller.png)
+
   * Link "Welcome" -> "Success"
   * Hand test in simulator
 
