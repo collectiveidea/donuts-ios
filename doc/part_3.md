@@ -22,7 +22,10 @@
     * Rename `Donuts-iOS/Controllers/ViewController.swift` to `WelcomeViewController.swift`
     * Change class name to `WelcomeViewController.swift`
     * Change class used in Interface Builder to `WelcomeViewController`
-    
+    * Add UI Elements
+      * Buton
+      * ImageView
+      * Label
   * Add "Success" screen
   * Add "Confirm" screen
 
