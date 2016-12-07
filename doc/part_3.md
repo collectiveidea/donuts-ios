@@ -33,11 +33,18 @@
       * Use copy/paste
       * Change the scene's class
       * Change the content
-  * Add "Confirm" screen
-    * Add a "ConfirmViewcontroller.swift" file in `Controllers`
+  * Add "Warn" screen
+    * Add a "WarnViewcontroller.swift" file in `Controllers`
+    * Add the "WarnViewController" scene to the Storyboard
+      * Use copy/paste
+      * Change the scene's class
+      * Change the content
 
-
+  * Now the Storyboard should look like this ![Your storyboard should now look like this](story-board-with-scenes.png)
+  * Add Nav Controller to WelcomeViewController
+    * In
   * Link "Welcome" -> "Success"
+  * Hand test in simulator
 
 
 ### Writing tests around the workflow
