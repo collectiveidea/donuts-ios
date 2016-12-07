@@ -34,6 +34,8 @@
       * Change the scene's class
       * Change the content
   * Add "Confirm" screen
+    * Add a "ConfirmViewcontroller.swift" file in `Controllers`
+
 
   * Link "Welcome" -> "Success"
 
