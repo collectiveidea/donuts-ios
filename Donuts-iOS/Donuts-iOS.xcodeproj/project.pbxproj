@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73673F91DF88D4B00B139D8 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
 		A7ADED151DD2483600E8A35D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A7ADED141DD2483600E8A35D /* WelcomeViewController.swift */,
+				A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7ADED151DD2483600E8A35D /* WelcomeViewController.swift in Sources */,
+				A73673F91DF88D4B00B139D8 /* SuccessViewController.swift in Sources */,
 				A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

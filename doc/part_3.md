@@ -26,7 +26,13 @@
       * Buton
       * ImageView
       * Label
+
   * Add "Success" screen
+    * Add a "SuccessViewcontroller.swift file" in `Controllers`
+    * Add the "SuccessViewcontroller" scene to the Storyboard
+      * Use copy/paste
+      * Change the scene's class
+      * Change the content
   * Add "Confirm" screen
 
   * Link "Welcome" -> "Success"
