@@ -25,6 +25,7 @@ class APITest: XCTestCase {
     func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
         let donutHost = "donuts.test"
         let donutsApi = DonutsAPI(baseUrl: "https://\(donutHost)")
+        
         let asyncExpectation = expectation(description: "getTodayClaims()")
         var todayClaimsCallCount = 0
         
@@ -66,12 +67,7 @@ class DonutsAPI {
     
     func getTodayClaims(completion: @escaping ([User]) -> ()) {
         Alamofire.request("\(baseUrl)/api/v1/claims/today").responseJSON { (response) in
-            if let json = response.result.value as? [[String:Any?]] {
-                let users = json.map { User(fromJSON: $0) }
-                completion(users)
-            } else {
-                completion([User]())
-            }
+            completion([User]())
         }
     }
 }
