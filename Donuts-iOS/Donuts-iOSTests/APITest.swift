@@ -8,6 +8,7 @@
 
 import XCTest
 import OHHTTPStubs
+import Alamofire
 
 class APITest: XCTestCase {
     
@@ -22,11 +23,12 @@ class APITest: XCTestCase {
     }
     
     func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
-        let donutsApi = DonutsAPI()
+        let donutHost = "donuts.test"
+        let donutsApi = DonutsAPI(baseUrl: "https://\(donutHost)")
         let asyncExpectation = expectation(description: "getTodayClaims()")
         var todayClaimsCallCount = 0
         
-        stub(condition: isMethodGET() && isPath("/api/v1/claims/today")) { _ in
+        stub(condition: isScheme("https") && isHost(donutHost) && isMethodGET() && isPath("/api/v1/claims/today")) { _ in
             // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
             return OHHTTPStubsResponse(
                 data: "[]".data(using: String.Encoding.utf8)!,
@@ -56,7 +58,20 @@ class APITest: XCTestCase {
 }
 
 class DonutsAPI {
-    func getTodayClaims(completion: ([User]) -> ()) {
-        completion([User]())
+    let baseUrl: String
+    
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+    
+    func getTodayClaims(completion: @escaping ([User]) -> ()) {
+        Alamofire.request("\(baseUrl)/api/v1/claims/today").responseJSON { (response) in
+            if let json = response.result.value as? [[String:Any?]] {
+                let users = json.map { User(fromJSON: $0) }
+                completion(users)
+            } else {
+                completion([User]())
+            }
+        }
     }
 }
