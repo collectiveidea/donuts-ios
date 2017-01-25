@@ -54,17 +54,17 @@ class UserTest: XCTestCase {
         }
         return nil
     }
-    
+
 }
 
-class User {
+struct User {
     
     var id: String?
     var githubLogin: String?
     var name: String?
     var displayName: String?
     
-    convenience init(fromJSON json: [String: Any]) {
+    init(fromJSON json: [String: Any]) {
         let id = json["id"] as? String
         let githubLogin = json["github_login"] as? String
         let name = json["name"] as? String
