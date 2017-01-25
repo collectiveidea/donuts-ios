@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185A18221E369B460033582C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185A18211E369B460033582C /* ObjectMapper.framework */; };
 		185A18251E369BC00033582C /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A18241E369BC00033582C /* UserTest.swift */; };
 		185A18281E369C960033582C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 185A18271E369C960033582C /* user.json */; };
-		185A18291E369FA40033582C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185A18211E369B460033582C /* ObjectMapper.framework */; };
 		A73673F91DF88D4B00B139D8 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */; };
 		A73673FB1DF88F7500B139D8 /* WarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73673FA1DF88F7500B139D8 /* WarnViewController.swift */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
@@ -40,8 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		185A18211E369B460033582C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		185A18241E369BC00033582C /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		185A18241E369BC00033582C /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		185A18271E369C960033582C /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		A73673FA1DF88F7500B139D8 /* WarnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarnViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185A18221E369B460033582C /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185A18291E369FA40033582C /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +85,6 @@
 		185A18201E369B460033582C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				185A18211E369B460033582C /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -329,7 +323,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
