@@ -22,14 +22,24 @@ class APITest: XCTestCase {
     
     func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
         let donutsApi = DonutsAPI()
-
-        XCTAssertTrue(donutsApi.getTodayClaims().isEmpty)
+        let asyncExpectation = expectation(description: "getTodayClaims()")
+        
+        donutsApi.getTodayClaims() { users in
+            XCTAssertTrue(users.isEmpty)
+            asyncExpectation.fulfill()
+            
+        }
+        waitForExpectations(timeout: 1) { (error) in
+            if let error = error {
+                XCTFail("getTodayClaims Timeout errored: \(error)")
+            }
+        }
     }
 }
 
 class DonutsAPI {
-    func getTodayClaims() -> [User] {
-        return [User]()
+    func getTodayClaims(completion: ([User]) -> ()) {
+        completion([User]())
     }
 }
 
