@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import OHHTTPStubs
 
 class APITest: XCTestCase {
     
@@ -16,16 +17,33 @@ class APITest: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        OHHTTPStubs.removeAllStubs()
         super.tearDown()
     }
     
     func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
         let donutsApi = DonutsAPI()
         let asyncExpectation = expectation(description: "getTodayClaims()")
+        var todayClaimsCallCount = 0
+        
+        stub(condition: isMethodGET() && isPath("/api/v1/claims/today")) { _ in
+            // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
+            return OHHTTPStubsResponse(
+                data: "[]".data(using: String.Encoding.utf8)!,
+                statusCode: 200,
+                headers: ["Content-Type": "application/json"]
+            )
+        }.name = "todaysClaimsEmpty"
+        
+        OHHTTPStubs.onStubActivation { (request, stub, response) in
+            if stub.name == "todaysClaimsEmpty" {
+                todayClaimsCallCount += 1
+            }
+        }
         
         donutsApi.getTodayClaims() { users in
             XCTAssertTrue(users.isEmpty)
+            XCTAssertEqual(1, todayClaimsCallCount)
             asyncExpectation.fulfill()
             
         }
@@ -42,17 +60,3 @@ class DonutsAPI {
         completion([User]())
     }
 }
-
-/*
-struct DonutsAPI {
-    static let url = "/api/v1/claims/today"
-}
-
-struct DonutService {
-    
-    func getTodaysClaims() {
-        
-    }
-    
-}
- */

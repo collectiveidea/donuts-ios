@@ -10,6 +10,7 @@
 		185A18251E369BC00033582C /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A18241E369BC00033582C /* UserTest.swift */; };
 		185A18281E369C960033582C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 185A18271E369C960033582C /* user.json */; };
 		57E959B41E38F2900041B401 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E959B31E38F2900041B401 /* APITest.swift */; };
+		57F2F34C1E391497007FC894 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */; };
 		A73673F91DF88D4B00B139D8 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */; };
 		A73673FB1DF88F7500B139D8 /* WarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73673FA1DF88F7500B139D8 /* WarnViewController.swift */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		185A18241E369BC00033582C /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		185A18271E369C960033582C /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		57E959B31E38F2900041B401 /* APITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+		57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		A73673F81DF88D4B00B139D8 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		A73673FA1DF88F7500B139D8 /* WarnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarnViewController.swift; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F2F34C1E391497007FC894 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 		185A18201E369B460033582C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 				A7ADED1F1DD2483600E8A35D /* Sources */,
 				A7ADED201DD2483600E8A35D /* Frameworks */,
 				A7ADED211DD2483600E8A35D /* Resources */,
+				57F2F34D1E3917B5007FC894 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,6 +331,21 @@
 			files = (
 			);
 			inputPaths = (
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		57F2F34D1E3917B5007FC894 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
