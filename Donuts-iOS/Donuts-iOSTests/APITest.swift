@@ -22,7 +22,12 @@ class APITest: XCTestCase {
         super.tearDown()
     }
     
-    func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
+    func test_urlFor_getTodayClaims_usesBaseUrl() {
+        let donutsApi = DonutsAPI(baseUrl: "https://donuts.test")
+        XCTAssertEqual("https://donuts.test/api/v1/claims/today", donutsApi.urlFor(path: "claims/today"))
+    }
+    
+    func test_getTodayClaims_callsNetworkApi() {
         let donutHost = "donuts.test"
         let donutsApi = DonutsAPI(baseUrl: "https://\(donutHost)")
         
@@ -31,6 +36,34 @@ class APITest: XCTestCase {
         
         stub(condition: isScheme("https") && isHost(donutHost) && isMethodGET() && isPath("/api/v1/claims/today")) { _ in
             // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
+            return OHHTTPStubsResponse()
+            }.name = "todaysClaimsNetwork"
+        
+        OHHTTPStubs.onStubActivation { (request, stub, response) in
+            if stub.name == "todaysClaimsNetwork" {
+                todayClaimsCallCount += 1
+            }
+        }
+        
+        donutsApi.getTodayClaims() { users in
+            XCTAssertEqual(1, todayClaimsCallCount)
+            asyncExpectation.fulfill()
+            
+        }
+        waitForExpectations(timeout: 1) { (error) in
+            if let error = error {
+                XCTFail("getTodayClaims Timeout errored: \(error)")
+            }
+        }
+    }
+    
+    func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
+        let donutsApi = DonutsAPI(baseUrl: "https://donuts.test)")
+        
+        let asyncExpectation = expectation(description: "getTodayClaims()")
+        
+        stub(condition: isMethodGET() && isPath("/api/v1/claims/today")) { _ in
+            // Stub it with our "wsresponse.json" stub file (which is in same bundle as self)
             return OHHTTPStubsResponse(
                 data: "[]".data(using: String.Encoding.utf8)!,
                 statusCode: 200,
@@ -38,19 +71,38 @@ class APITest: XCTestCase {
             )
         }.name = "todaysClaimsEmpty"
         
-        OHHTTPStubs.onStubActivation { (request, stub, response) in
-            if stub.name == "todaysClaimsEmpty" {
-                todayClaimsCallCount += 1
-            }
-        }
-        
         donutsApi.getTodayClaims() { users in
             XCTAssertTrue(users.isEmpty)
-            XCTAssertEqual(1, todayClaimsCallCount)
             asyncExpectation.fulfill()
             
         }
         waitForExpectations(timeout: 1) { (error) in
+            if let error = error {
+                XCTFail("getTodayClaims Timeout errored: \(error)")
+            }
+        }
+    }
+    
+    func test_getTodayClaims_withClaimsOnServer_returnsListOfThoseUsers() {
+        let donutsApi = DonutsAPI(baseUrl: "https://donuts.test")
+        
+        let asyncExpectation = expectation(description: "getTodayClaims()")
+        
+        stub(condition: isMethodGET() && isPath("/api/v1/claims/today")) { _ in
+            return OHHTTPStubsResponse(
+                fileAtPath: OHPathForFile("users.json", type(of: self))!,
+                statusCode: 200,
+                headers: ["Content-Type": "application/json"]
+            )
+        }.name = "todaysClaimsFull"
+
+        donutsApi.getTodayClaims { users in
+            XCTAssertEqual(users, TestUsers.users, "Users do not match Test Data")
+
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
             if let error = error {
                 XCTFail("getTodayClaims Timeout errored: \(error)")
             }
@@ -66,33 +118,6 @@ class APITest: XCTestCase {
         
         static let users = [user1, user2]
     }
-    
-    func test_getTodayClaims_withClaimsOnServer_returnsListOfThoseUsers() {
-        let donutHost = "donuts.test"
-        let donutsApi = DonutsAPI(baseUrl: "https://\(donutHost)")
-        
-        let asyncExpectation = expectation(description: "getTodayClaims()")
-        
-        stub(condition: isScheme("https") && isHost(donutHost) && isMethodGET() && isPath("/api/v1/claims/today")) { _ in
-            return OHHTTPStubsResponse(
-                fileAtPath: OHPathForFile("users.json", type(of: self))!,
-                statusCode: 200,
-                headers: ["Content-Type": "application/json"]
-            )
-        }.name = "todaysClaimsEmpty"
-
-        donutsApi.getTodayClaims { users in
-            XCTAssertEqual(users, TestUsers.users, "Users do not match Test Data")
-
-            asyncExpectation.fulfill()
-        }
-        
-        waitForExpectations(timeout: 1) { error in
-            if let error = error {
-                XCTFail("getTodayClaims Timeout errored: \(error)")
-            }
-        }
-    }
 }
 
 class DonutsAPI {
@@ -102,8 +127,12 @@ class DonutsAPI {
         self.baseUrl = baseUrl
     }
     
+    func urlFor(path: String) -> String {
+        return "\(baseUrl)/api/v1/\(path)"
+    }
+    
     func getTodayClaims(completion: @escaping ([User]) -> ()) {
-        Alamofire.request("\(baseUrl)/api/v1/claims/today").responseJSON { (response) in
+        Alamofire.request(urlFor(path: "claims/today")).responseJSON { (response) in
             if let json = response.result.value as? [[String:Any?]] {
                 let users = json.flatMap { User(fromJSON: $0) }
                 completion(users)
