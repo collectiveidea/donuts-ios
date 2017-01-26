@@ -119,26 +119,3 @@ class APITest: XCTestCase {
         static let users = [user1, user2]
     }
 }
-
-class DonutsAPI {
-    let baseUrl: String
-    
-    init(baseUrl: String) {
-        self.baseUrl = baseUrl
-    }
-    
-    func urlFor(path: String) -> String {
-        return "\(baseUrl)/api/v1/\(path)"
-    }
-    
-    func getTodayClaims(completion: @escaping ([User]) -> ()) {
-        Alamofire.request(urlFor(path: "claims/today")).responseJSON { (response) in
-            if let json = response.result.value as? [[String:Any?]] {
-                let users = json.flatMap { User(fromJSON: $0) }
-                completion(users)
-            } else {
-                completion([User]())
-            }
-        }
-    }
-}

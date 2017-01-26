@@ -10,6 +10,10 @@
 		185A18251E369BC00033582C /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A18241E369BC00033582C /* UserTest.swift */; };
 		185A18281E369C960033582C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 185A18271E369C960033582C /* user.json */; };
 		570C5CDD1E393EDD00A13BC7 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 570C5CDC1E393EDD00A13BC7 /* users.json */; };
+		573257401E3A6AE9004638D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5732573F1E3A6AE9004638D6 /* User.swift */; };
+		573257411E3A6AE9004638D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5732573F1E3A6AE9004638D6 /* User.swift */; };
+		573257431E3A6B43004638D6 /* DonutsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573257421E3A6B43004638D6 /* DonutsAPI.swift */; };
+		573257441E3A6B43004638D6 /* DonutsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573257421E3A6B43004638D6 /* DonutsAPI.swift */; };
 		57E959B41E38F2900041B401 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E959B31E38F2900041B401 /* APITest.swift */; };
 		57F2F34C1E391497007FC894 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */; };
 		57F2F34F1E391CB1007FC894 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2F34E1E391CB1007FC894 /* Alamofire.framework */; };
@@ -46,6 +50,8 @@
 		185A18241E369BC00033582C /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		185A18271E369C960033582C /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		570C5CDC1E393EDD00A13BC7 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		5732573F1E3A6AE9004638D6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		573257421E3A6B43004638D6 /* DonutsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsAPI.swift; sourceTree = "<group>"; };
 		57E959B31E38F2900041B401 /* APITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		57F2F34E1E391CB1007FC894 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -112,6 +118,23 @@
 			name = Fixtures;
 			sourceTree = "<group>";
 		};
+		5732573E1E3A6AB6004638D6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				573257451E3A6BF4004638D6 /* Models */,
+				573257421E3A6B43004638D6 /* DonutsAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		573257451E3A6BF4004638D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5732573F1E3A6AE9004638D6 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A7ADED061DD2483600E8A35D = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +159,7 @@
 		A7ADED111DD2483600E8A35D /* Donuts-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5732573E1E3A6AB6004638D6 /* API */,
 				A7ADED401DD24B9C00E8A35D /* Supporting Files */,
 				A7ADED431DD24BCF00E8A35D /* Views */,
 				A7ADED421DD24BC700E8A35D /* Models */,
@@ -375,6 +399,8 @@
 				A7ADED151DD2483600E8A35D /* WelcomeViewController.swift in Sources */,
 				A73673F91DF88D4B00B139D8 /* SuccessViewController.swift in Sources */,
 				A73673FB1DF88F7500B139D8 /* WarnViewController.swift in Sources */,
+				573257431E3A6B43004638D6 /* DonutsAPI.swift in Sources */,
+				573257401E3A6AE9004638D6 /* User.swift in Sources */,
 				A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,9 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573257411E3A6AE9004638D6 /* User.swift in Sources */,
 				185A18251E369BC00033582C /* UserTest.swift in Sources */,
 				A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */,
 				57E959B41E38F2900041B401 /* APITest.swift in Sources */,
+				573257441E3A6B43004638D6 /* DonutsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
