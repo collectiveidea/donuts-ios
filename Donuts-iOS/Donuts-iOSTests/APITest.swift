@@ -56,6 +56,43 @@ class APITest: XCTestCase {
             }
         }
     }
+    
+    struct TestUsers {
+        // these users use the same values that are in the users.json
+        
+        private static let user1 = User(id: "63db9251-9c45-41ca-92d6-15e84ebea5b3", githubLogin: "vgonda", name: "Victoria Gonda", displayName: "Victoria")
+        
+        private static let user2 = User(id: "73db9251-9c45-41ca-92d6-15e84ebea5b3", githubLogin: "bebert", name: "Be-Bert", displayName: "Be-Bert")
+        
+        static let users = [user1, user2]
+    }
+    
+    func test_getTodayClaims_withClaimsOnServer_returnsListOfThoseUsers() {
+        let donutHost = "donuts.test"
+        let donutsApi = DonutsAPI(baseUrl: "https://\(donutHost)")
+        
+        let asyncExpectation = expectation(description: "getTodayClaims()")
+        
+        stub(condition: isScheme("https") && isHost(donutHost) && isMethodGET() && isPath("/api/v1/claims/today")) { _ in
+            return OHHTTPStubsResponse(
+                fileAtPath: OHPathForFile("users.json", type(of: self))!,
+                statusCode: 200,
+                headers: ["Content-Type": "application/json"]
+            )
+        }.name = "todaysClaimsEmpty"
+
+        donutsApi.getTodayClaims { users in
+            XCTAssertEqual(users, TestUsers.users, "Users do not match Test Data")
+
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            if let error = error {
+                XCTFail("getTodayClaims Timeout errored: \(error)")
+            }
+        }
+    }
 }
 
 class DonutsAPI {
@@ -67,7 +104,12 @@ class DonutsAPI {
     
     func getTodayClaims(completion: @escaping ([User]) -> ()) {
         Alamofire.request("\(baseUrl)/api/v1/claims/today").responseJSON { (response) in
-            completion([User]())
+            if let json = response.result.value as? [[String:Any?]] {
+                let users = json.flatMap { User(fromJSON: $0) }
+                completion(users)
+            } else {
+                completion([User]())
+            }
         }
     }
 }

@@ -40,13 +40,23 @@ class UserTest: XCTestCase {
 
 }
 
-struct User {
+struct User: Equatable {
     
     var id: String?
     var githubLogin: String?
     var name: String?
     var displayName: String?
     
+    static func ==(lhs: User, rhs: User) -> Bool {
+        if (lhs.id == rhs.id &&
+            lhs.githubLogin == rhs.githubLogin &&
+            lhs.name == rhs.name &&
+            lhs.displayName == rhs.displayName) {
+            return true
+        }
+        return false
+    }
+        
     init(fromJSON json: [String: Any]) {
         let id = json["id"] as? String
         let githubLogin = json["github_login"] as? String

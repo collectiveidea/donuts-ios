@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		185A18251E369BC00033582C /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A18241E369BC00033582C /* UserTest.swift */; };
 		185A18281E369C960033582C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 185A18271E369C960033582C /* user.json */; };
+		570C5CDD1E393EDD00A13BC7 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 570C5CDC1E393EDD00A13BC7 /* users.json */; };
 		57E959B41E38F2900041B401 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E959B31E38F2900041B401 /* APITest.swift */; };
 		57F2F34C1E391497007FC894 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */; };
 		57F2F34F1E391CB1007FC894 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2F34E1E391CB1007FC894 /* Alamofire.framework */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		185A18241E369BC00033582C /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		185A18271E369C960033582C /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
+		570C5CDC1E393EDD00A13BC7 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		57E959B31E38F2900041B401 /* APITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		57F2F34B1E391497007FC894 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		57F2F34E1E391CB1007FC894 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				185A18271E369C960033582C /* user.json */,
+				570C5CDC1E393EDD00A13BC7 /* users.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570C5CDD1E393EDD00A13BC7 /* users.json in Resources */,
 				185A18281E369C960033582C /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
