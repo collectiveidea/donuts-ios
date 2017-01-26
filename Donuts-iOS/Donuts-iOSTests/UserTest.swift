@@ -37,30 +37,19 @@ class UserTest: XCTestCase {
         }
         return nil
     }
-
-}
-
-struct User {
     
-    var id: String?
-    var githubLogin: String?
-    var name: String?
-    var displayName: String?
-    
-    init(fromJSON json: [String: Any]) {
-        let id = json["id"] as? String
-        let githubLogin = json["github_login"] as? String
-        let name = json["name"] as? String
-        let displayName = json["display_name"] as? String
+    func test_equality_withAnyPropertyMismatched_isNotEqual() {
+        let primary = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let primaryCopy = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let idDiff = User(id: "hell", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let loginDiff = User(id: "hello", githubLogin: "hellob", name: "Hello World", displayName: "Hello")
+        let nameDiff = User(id: "hello", githubLogin: "hello", name: "Hello Worlds", displayName: "Hello")
+        let displayNameDiff = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hellos")
         
-        self.init(id: id, githubLogin: githubLogin, name: name, displayName: displayName)
+        XCTAssertEqual(primary, primaryCopy)
+        XCTAssertNotEqual(primary, idDiff)
+        XCTAssertNotEqual(primary, loginDiff)
+        XCTAssertNotEqual(primary, nameDiff)
+        XCTAssertNotEqual(primary, displayNameDiff)
     }
-    
-    init(id: String?, githubLogin: String?, name: String?, displayName: String?) {
-        self.id = id
-        self.githubLogin = githubLogin
-        self.name = name
-        self.displayName = displayName
-    }
-    
 }
