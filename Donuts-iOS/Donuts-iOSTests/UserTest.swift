@@ -39,16 +39,18 @@ class UserTest: XCTestCase {
     }
     
     func test_equality_withAnyPropertyMismatched_isNotEqual() {
-        let user1 = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
-        let user2 = User(id: "hello", githubLogin: "hellob", name: "Hello World", displayName: "Hello")
-        let user3 = User(id: "hello", githubLogin: "hello", name: "Hello Worlds", displayName: "Hello")
-        let user4 = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hellos")
-        let user5 = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
-
-        XCTAssertEqual(user1, user5)
-        XCTAssertNotEqual(user1, user2)
-        XCTAssertNotEqual(user1, user3)
-        XCTAssertNotEqual(user1, user4)
+        let primary = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let primaryCopy = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let idDiff = User(id: "hell", githubLogin: "hello", name: "Hello World", displayName: "Hello")
+        let loginDiff = User(id: "hello", githubLogin: "hellob", name: "Hello World", displayName: "Hello")
+        let nameDiff = User(id: "hello", githubLogin: "hello", name: "Hello Worlds", displayName: "Hello")
+        let displayNameDiff = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hellos")
+        
+        XCTAssertEqual(primary, primaryCopy)
+        XCTAssertNotEqual(primary, idDiff)
+        XCTAssertNotEqual(primary, loginDiff)
+        XCTAssertNotEqual(primary, nameDiff)
+        XCTAssertNotEqual(primary, displayNameDiff)
     }
 }
 
