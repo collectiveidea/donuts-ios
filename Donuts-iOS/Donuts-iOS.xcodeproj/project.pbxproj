@@ -25,7 +25,6 @@
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
 		A7ADED1A1DD2483600E8A35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED191DD2483600E8A35D /* Assets.xcassets */; };
 		A7ADED1D1DD2483600E8A35D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED1B1DD2483600E8A35D /* LaunchScreen.storyboard */; };
-		A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */; };
 		A7ADED331DD2483600E8A35D /* Donuts_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED321DD2483600E8A35D /* Donuts_iOSUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +64,6 @@
 		A7ADED1C1DD2483600E8A35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7ADED1E1DD2483600E8A35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7ADED231DD2483600E8A35D /* Donuts-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Donuts-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donuts_iOSTests.swift; sourceTree = "<group>"; };
 		A7ADED291DD2483600E8A35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7ADED2E1DD2483600E8A35D /* Donuts-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Donuts-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED321DD2483600E8A35D /* Donuts_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donuts_iOSUITests.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				185A18261E369C6D0033582C /* Fixtures */,
-				A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */,
 				185A18241E369BC00033582C /* UserTest.swift */,
 				57E959B31E38F2900041B401 /* APITest.swift */,
 				A7ADED291DD2483600E8A35D /* Info.plist */,
@@ -411,7 +408,6 @@
 			files = (
 				573257411E3A6AE9004638D6 /* User.swift in Sources */,
 				185A18251E369BC00033582C /* UserTest.swift in Sources */,
-				A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */,
 				57E959B41E38F2900041B401 /* APITest.swift in Sources */,
 				573257441E3A6B43004638D6 /* DonutsAPI.swift in Sources */,
 			);

@@ -10,20 +10,18 @@ import Foundation
 import Alamofire
 
 struct DonutsAPI {
-    let baseUrl: String
+    var baseUrl: URL
     
     init(baseUrl: String) {
-        self.baseUrl = baseUrl
-    }
-    
-    func urlFor(path: String) -> String {
-        return "\(baseUrl)/api/v1/\(path)"
+        self.baseUrl = URL(string: baseUrl)!
     }
     
     func getTodayClaims(completion: @escaping ([User]) -> ()) {
-        Alamofire.request(urlFor(path: "claims/today")).responseJSON { (response) in
+        let url = baseUrl.appendingPathComponent("/api/v1/claims/today")
+        
+        Alamofire.request(url).responseJSON { (response) in
             if let json = response.result.value as? [[String:Any?]] {
-                let users = json.flatMap { User(fromJSON: $0) }
+                let users = json.map{ User(fromJSON: $0) }
                 completion(users)
             } else {
                 completion([User]())

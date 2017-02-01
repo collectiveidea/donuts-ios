@@ -52,4 +52,5 @@ class UserTest: XCTestCase {
         XCTAssertNotEqual(primary, nameDiff)
         XCTAssertNotEqual(primary, displayNameDiff)
     }
+
 }
