@@ -1,5 +1,5 @@
 //
-//  APITest.swift
+//  DonutsAPITest.swift
 //  Donuts-iOS
 //
 //  Created by Ben Lambert on 1/25/17.
@@ -24,7 +24,7 @@ extension XCTestCase {
     }
 }
 
-class APITest: XCTestCase {
+class DonutsAPITest: XCTestCase {
 
   let donutsApi = DonutsAPI(baseUrl: "https://donuts.test")
 

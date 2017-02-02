@@ -38,19 +38,43 @@ class UserTest: XCTestCase {
         return nil
     }
     
-    func test_equality_withAnyPropertyMismatched_isNotEqual() {
-        let primary = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
-        let primaryCopy = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hello")
-        let idDiff = User(id: "hell", githubLogin: "hello", name: "Hello World", displayName: "Hello")
-        let loginDiff = User(id: "hello", githubLogin: "hellob", name: "Hello World", displayName: "Hello")
-        let nameDiff = User(id: "hello", githubLogin: "hello", name: "Hello Worlds", displayName: "Hello")
-        let displayNameDiff = User(id: "hello", githubLogin: "hello", name: "Hello World", displayName: "Hellos")
+    func test_equality_withMatchingProperties_isEqual() {
+        let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+        let user2 = user
         
-        XCTAssertEqual(primary, primaryCopy)
-        XCTAssertNotEqual(primary, idDiff)
-        XCTAssertNotEqual(primary, loginDiff)
-        XCTAssertNotEqual(primary, nameDiff)
-        XCTAssertNotEqual(primary, displayNameDiff)
+        XCTAssertEqual(user, user2)
     }
-
+    
+    func test_equality_withDifferentID_isNotEqual() {
+        let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+        var user2 = user
+        user2.id = "User2"
+        
+        XCTAssertNotEqual(user, user2)
+    }
+    
+    func test_equality_withDifferentLogin_isNotEqual() {
+        let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+        var user2 = user
+        user2.githubLogin = "Login2"
+        
+        XCTAssertNotEqual(user, user2)
+    }
+    
+    func test_equality_withDifferentName_isNotEqual() {
+        let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+        var user2 = user
+        user2.name = "User2"
+        
+        XCTAssertNotEqual(user, user2)
+    }
+    
+    func test_equality_withDifferentDisplayName_isNotEqual() {
+        let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+        var user2 = user
+        user2.displayName = "User2"
+        
+        XCTAssertNotEqual(user, user2)
+    }
+    
 }
