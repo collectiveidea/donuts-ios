@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		18DD0F871E82D43600B44BCE /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DD0F861E82D43600B44BCE /* user.json */; };
 		18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F891E82D52200B44BCE /* UserTest.swift */; };
+		18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
 		A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* ViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
 		A7ADED1A1DD2483600E8A35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED191DD2483600E8A35D /* Assets.xcassets */; };
 		A7ADED1D1DD2483600E8A35D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED1B1DD2483600E8A35D /* LaunchScreen.storyboard */; };
-		A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */; };
 		A7ADED331DD2483600E8A35D /* Donuts_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED321DD2483600E8A35D /* Donuts_iOSUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		18DD0F861E82D43600B44BCE /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		18DD0F891E82D52200B44BCE /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ADED141DD2483600E8A35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		A7ADED1C1DD2483600E8A35D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7ADED1E1DD2483600E8A35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7ADED231DD2483600E8A35D /* Donuts-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Donuts-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donuts_iOSTests.swift; sourceTree = "<group>"; };
 		A7ADED291DD2483600E8A35D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7ADED2E1DD2483600E8A35D /* Donuts-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Donuts-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED321DD2483600E8A35D /* Donuts_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donuts_iOSUITests.swift; sourceTree = "<group>"; };
@@ -121,10 +121,10 @@
 		A7ADED261DD2483600E8A35D /* Donuts-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */,
 				18DD0F891E82D52200B44BCE /* UserTest.swift */,
 				A7ADED291DD2483600E8A35D /* Info.plist */,
 				18DD0F881E82D43D00B44BCE /* Fixtures */,
+				18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */,
 			);
 			path = "Donuts-iOSTests";
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */,
-				A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */,
+				18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

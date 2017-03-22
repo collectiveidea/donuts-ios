@@ -20,15 +20,31 @@ class UserTest: XCTestCase {
     super.tearDown()
   }
 
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
+  func testJsonMapping_returnsValidUser() {
+    let json = fixtureJson(name: "user")!
+    let user = User(fromJSON: json)
 
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
-    }
+    XCTAssert("63db9251-9c45-41ca-92d6-15e84ebea5b3" == user.id)
+    XCTAssert("be-bert" == user.githubLogin)
+    XCTAssert("Be-Bert" == user.name)
+    XCTAssert("Be-Bert" == user.displayName)
+  }
+}
+
+struct User {
+  var id: String?
+  var githubLogin: String?
+  var name: String?
+  var displayName: String?
+}
+
+extension User {
+  init(fromJSON json: [String: Any]) {
+    self.init(
+      id: json["id"] as? String,
+      githubLogin: json["github_login"] as? String,
+      name: json["name"] as? String,
+      displayName: json["display_name"] as? String
+    )
   }
 }
