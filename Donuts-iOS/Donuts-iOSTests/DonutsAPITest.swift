@@ -12,14 +12,19 @@ import XCTest
 class DonutsAPITest: XCTestCase {
   let donutsApi = DonutsAPI()
 
-  func test_getTodayClaims_whenNoClaimsOnServer_returnsEmptyUserList() {
-    XCTAssertTrue(donutsApi.getTodayClaims().isEmpty)
+  func test_getTodayClaims_whenNoClaimsOnServer_callsCompletionWithUsersList() {
+    expectWithCallbacks(description: "emptyClaims") { expectation in
+      donutsApi.getTodayClaims { users in
+        XCTAssertTrue(users.isEmpty)
+        expectation.fulfill()
+      }
+    }
   }
 }
 
 
 class DonutsAPI {
-  func getTodayClaims() -> [User] {
-    return [User]()
+  func getTodayClaims(completion: ([User]) -> Void) {
+    completion([User]())
   }
 }
