@@ -27,4 +27,16 @@ extension XCTestCase {
     }
     return nil
   }
+
+  func expectWithCallbacks(description: String, function: (_ expectation: XCTestExpectation) -> Void) {
+    let asyncExpectation = expectation(description: description)
+
+    function(asyncExpectation)
+
+    waitForExpectations(timeout: 1) { (error) in
+      if let error = error {
+        XCTFail("\(description) Timeout errored: \(error)")
+      }
+    }
+  }
 }
