@@ -6,6 +6,7 @@
 //  Copyright © 2017 Collective Idea. All rights reserved.
 //
 
+@testable import Donuts_iOS
 import XCTest
 
 class UserTest: XCTestCase {
@@ -28,23 +29,5 @@ class UserTest: XCTestCase {
     XCTAssert("be-bert" == user.githubLogin)
     XCTAssert("Be-Bert" == user.name)
     XCTAssert("Be-Bert" == user.displayName)
-  }
-}
-
-struct User {
-  var id: String?
-  var githubLogin: String?
-  var name: String?
-  var displayName: String?
-}
-
-extension User {
-  init(fromJSON json: [String: Any]) {
-    self.init(
-      id: json["id"] as? String,
-      githubLogin: json["github_login"] as? String,
-      name: json["name"] as? String,
-      displayName: json["display_name"] as? String
-    )
   }
 }
