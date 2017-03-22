@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D45E081E845E0500A04A8A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB21661E82E882001B7526 /* OHHTTPStubs.framework */; };
 		18DB21621E82E7FD001B7526 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 18DB215F1E82E7FD001B7526 /* Cartfile */; };
 		18DB21631E82E7FD001B7526 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 18DB21601E82E7FD001B7526 /* Cartfile.resolved */; };
 		18DB21641E82E7FD001B7526 /* Carthage in Resources */ = {isa = PBXBuildFile; fileRef = 18DB21611E82E7FD001B7526 /* Carthage */; };
+		18DB21671E82E882001B7526 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB21661E82E882001B7526 /* OHHTTPStubs.framework */; };
 		18DD0F871E82D43600B44BCE /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DD0F861E82D43600B44BCE /* user.json */; };
 		18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F891E82D52200B44BCE /* UserTest.swift */; };
 		18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */; };
@@ -44,6 +46,7 @@
 		18DB215F1E82E7FD001B7526 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		18DB21601E82E7FD001B7526 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		18DB21611E82E7FD001B7526 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
+		18DB21661E82E882001B7526 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		18DD0F861E82D43600B44BCE /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		18DD0F891E82D52200B44BCE /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D45E081E845E0500A04A8A /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DB21671E82E882001B7526 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DB21651E82E882001B7526 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18DB21661E82E882001B7526 /* OHHTTPStubs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18DD0F881E82D43D00B44BCE /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 				A7ADED261DD2483600E8A35D /* Donuts-iOSTests */,
 				A7ADED311DD2483600E8A35D /* Donuts-iOSUITests */,
 				A7ADED101DD2483600E8A35D /* Products */,
+				18DB21651E82E882001B7526 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -505,6 +519,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOSTests";
@@ -519,6 +537,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOSTests";
