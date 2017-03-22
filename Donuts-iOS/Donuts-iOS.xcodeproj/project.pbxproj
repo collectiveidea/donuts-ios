@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18DD0F871E82D43600B44BCE /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DD0F861E82D43600B44BCE /* user.json */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
 		A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* ViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18DD0F861E82D43600B44BCE /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ADED141DD2483600E8A35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DD0F881E82D43D00B44BCE /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				18DD0F861E82D43600B44BCE /* user.json */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
 		A7ADED061DD2483600E8A35D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 			children = (
 				A7ADED271DD2483600E8A35D /* Donuts_iOSTests.swift */,
 				A7ADED291DD2483600E8A35D /* Info.plist */,
+				18DD0F881E82D43D00B44BCE /* Fixtures */,
 			);
 			path = "Donuts-iOSTests";
 			sourceTree = "<group>";
@@ -274,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD0F871E82D43600B44BCE /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +549,7 @@
 				A7ADED391DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7ADED3A1DD2483600E8A35D /* Build configuration list for PBXNativeTarget "Donuts-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +558,7 @@
 				A7ADED3C1DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7ADED3D1DD2483600E8A35D /* Build configuration list for PBXNativeTarget "Donuts-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +567,7 @@
 				A7ADED3F1DD2483600E8A35D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
