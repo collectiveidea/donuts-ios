@@ -12,6 +12,7 @@
 		18DB21631E82E7FD001B7526 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 18DB21601E82E7FD001B7526 /* Cartfile.resolved */; };
 		18DB21641E82E7FD001B7526 /* Carthage in Resources */ = {isa = PBXBuildFile; fileRef = 18DB21611E82E7FD001B7526 /* Carthage */; };
 		18DB21671E82E882001B7526 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB21661E82E882001B7526 /* OHHTTPStubs.framework */; };
+		18DB21691E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DB21681E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift */; };
 		18DD0F871E82D43600B44BCE /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DD0F861E82D43600B44BCE /* user.json */; };
 		18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F891E82D52200B44BCE /* UserTest.swift */; };
 		18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */; };
@@ -47,6 +48,7 @@
 		18DB21601E82E7FD001B7526 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		18DB21611E82E7FD001B7526 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
 		18DB21661E82E882001B7526 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		18DB21681E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OHHTTPStubs+Extensions.swift"; sourceTree = "<group>"; };
 		18DD0F861E82D43600B44BCE /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		18DD0F891E82D52200B44BCE /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				A7ADED291DD2483600E8A35D /* Info.plist */,
 				18DD0F881E82D43D00B44BCE /* Fixtures */,
 				18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */,
+				18DB21681E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift */,
 			);
 			path = "Donuts-iOSTests";
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			files = (
 				18DD0F941E82DDA700B44BCE /* DonutsAPITest.swift in Sources */,
 				18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */,
+				18DB21691E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift in Sources */,
 				18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
