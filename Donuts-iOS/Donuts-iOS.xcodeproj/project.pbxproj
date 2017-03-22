@@ -13,6 +13,7 @@
 		18DB21641E82E7FD001B7526 /* Carthage in Resources */ = {isa = PBXBuildFile; fileRef = 18DB21611E82E7FD001B7526 /* Carthage */; };
 		18DB21671E82E882001B7526 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB21661E82E882001B7526 /* OHHTTPStubs.framework */; };
 		18DB21691E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DB21681E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift */; };
+		18DB216B1E82F484001B7526 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DB216A1E82F484001B7526 /* Alamofire.framework */; };
 		18DD0F871E82D43600B44BCE /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 18DD0F861E82D43600B44BCE /* user.json */; };
 		18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F891E82D52200B44BCE /* UserTest.swift */; };
 		18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */; };
@@ -49,6 +50,7 @@
 		18DB21611E82E7FD001B7526 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
 		18DB21661E82E882001B7526 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		18DB21681E82ECFE001B7526 /* OHHTTPStubs+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OHHTTPStubs+Extensions.swift"; sourceTree = "<group>"; };
+		18DB216A1E82F484001B7526 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		18DD0F861E82D43600B44BCE /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = Fixtures/user.json; sourceTree = "<group>"; };
 		18DD0F891E82D52200B44BCE /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D45E081E845E0500A04A8A /* OHHTTPStubs.framework in Frameworks */,
+				18DB216B1E82F484001B7526 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +101,7 @@
 		18DB21651E82E882001B7526 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18DB216A1E82F484001B7526 /* Alamofire.framework */,
 				18DB21661E82E882001B7526 /* OHHTTPStubs.framework */,
 			);
 			name = Frameworks;
@@ -213,6 +217,7 @@
 				A7ADED0B1DD2483600E8A35D /* Sources */,
 				A7ADED0C1DD2483600E8A35D /* Frameworks */,
 				A7ADED0D1DD2483600E8A35D /* Resources */,
+				18DB216F1E82F4F8001B7526 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +340,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18DB216F1E82F4F8001B7526 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7ADED0B1DD2483600E8A35D /* Sources */ = {
@@ -498,6 +521,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOS";
@@ -510,6 +537,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOS";
