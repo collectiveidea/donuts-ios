@@ -11,6 +11,7 @@
 		18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F891E82D52200B44BCE /* UserTest.swift */; };
 		18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */; };
 		18DD0F901E82DB7300B44BCE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F8F1E82DB7300B44BCE /* User.swift */; };
+		18DD0F941E82DDA700B44BCE /* DonutsAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD0F931E82DDA700B44BCE /* DonutsAPITest.swift */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
 		A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* ViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		18DD0F891E82D52200B44BCE /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		18DD0F8F1E82DB7300B44BCE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18DD0F931E82DDA700B44BCE /* DonutsAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsAPITest.swift; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ADED141DD2483600E8A35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				18DD0F891E82D52200B44BCE /* UserTest.swift */,
+				18DD0F931E82DDA700B44BCE /* DonutsAPITest.swift */,
 				A7ADED291DD2483600E8A35D /* Info.plist */,
 				18DD0F881E82D43D00B44BCE /* Fixtures */,
 				18DD0F8B1E82D62300B44BCE /* XCTestCase+Extensions.swift */,
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD0F941E82DDA700B44BCE /* DonutsAPITest.swift in Sources */,
 				18DD0F8A1E82D52200B44BCE /* UserTest.swift in Sources */,
 				18DD0F8C1E82D62300B44BCE /* XCTestCase+Extensions.swift in Sources */,
 			);
