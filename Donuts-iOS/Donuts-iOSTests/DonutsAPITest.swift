@@ -46,15 +46,24 @@ class DonutsAPITest: XCTestCase {
       donutsApi.getTodayClaims { users in
         XCTAssertEqual(1, executedRequests.count)
 
+        let request = executedRequests.first
+        let expectedURL = "https://donuts.test/api/v1/claims/today"
+        XCTAssertEqual(expectedURL, request?.url?.absoluteString)
+        XCTAssertEqual("GET", request?.httpMethod)
+
         expectation.fulfill()
       }
     }
   }
 }
 
+import Alamofire
 
 class DonutsAPI {
-  func getTodayClaims(completion: ([User]) -> Void) {
-    completion([User]())
+  func getTodayClaims(completion: @escaping ([User]) -> Void) {
+    let url = "https://donuts.test/api/v1/claims/today"
+    Alamofire.request(url).responseJSON { (response) in
+      completion([User]())
+    }
   }
 }
