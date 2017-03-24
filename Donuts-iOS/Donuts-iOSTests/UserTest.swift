@@ -37,4 +37,36 @@ class UserTest: XCTestCase {
 
     XCTAssertEqual(user, user2)
   }
+
+  func test_equality_withDifferentID_isNotEqual() {
+    let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+    var user2 = user
+    user2.id = "Nothing"
+
+    XCTAssertNotEqual(user, user2)
+  }
+
+  func test_equality_withDifferentGithubLogin_isNotEqual() {
+    let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+    var user2 = user
+    user2.githubLogin = "Nothing"
+
+    XCTAssertNotEqual(user, user2)
+  }
+
+  func test_equality_withDifferentName_isNotEqual() {
+    let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+    var user2 = user
+    user2.name = "Nothing"
+
+    XCTAssertNotEqual(user, user2)
+  }
+
+  func test_equality_withDifferentDisplayName_isNotEqual() {
+    let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+    var user2 = user
+    user2.displayName = "Nothing"
+
+    XCTAssertNotEqual(user, user2)
+  }
 }

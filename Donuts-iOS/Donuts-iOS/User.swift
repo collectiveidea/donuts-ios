@@ -28,6 +28,9 @@ extension User {
 
 extension User: Equatable {
   static func ==(lhs: User, rhs: User) -> Bool {
-    return true
+    return lhs.id == rhs.id
+      && lhs.githubLogin == rhs.githubLogin
+      && lhs.name == rhs.name
+      && lhs.displayName == rhs.displayName
   }
 }
