@@ -35,6 +35,8 @@ class DonutsAPITest: XCTestCase {
   }
 
   func test_getTodayClaims_whenNoClaimsOnServer_callsCompletionWithUsersEmptyList() {
+    stub(condition: OHHTTPStubs.anyRequest(), response: todayClaimsEmptyResponse)
+
     expectWithCallbacks(description: "emptyClaims") { expectation in
       donutsApi.getTodayClaims { users in
         XCTAssertTrue(users.isEmpty)
