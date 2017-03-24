@@ -43,6 +43,18 @@ class DonutsAPITest: XCTestCase {
     }
   }
 
+  func test_getTodayClaims_withClaimsOnServer_callsCompletionWithListOfThoseUsers() {
+    expectWithCallbacks(description: "fullClaims") { expectation in
+      stub(condition: OHHTTPStubs.anyRequest(), response: todayClaimsFullResponse)
+
+      donutsApi.getTodayClaims { users in
+        XCTAssertEqual(TestUsers.users, users, "Users do not match Test Data")
+
+        expectation.fulfill()
+      }
+    }
+  }
+
   func test_getTodayClaims_requestsDataFromServer() {
     expectWithCallbacks(description: "requestsDataFromServer") { expectation in
       var executedRequests = [URLRequest]()
@@ -64,6 +76,26 @@ class DonutsAPITest: XCTestCase {
       }
     }
   }
+}
+
+struct TestUsers {
+  // these users use the same values that are in the users.json
+
+  private static let user1 = User(
+    id: "63db9251-9c45-41ca-92d6-15e84ebea5b3",
+    githubLogin: "shekibobo",
+    name: "Josh Kovach",
+    displayName: "Josh"
+  )
+
+  private static let user2 = User(
+    id: "73db9251-9c45-41ca-92d6-15e84ebea5b3",
+    githubLogin: "bebert",
+    name: "Be-Bert",
+    displayName: "Be-Bert"
+  )
+
+  static let users = [user1, user2]
 }
 
 import Alamofire
