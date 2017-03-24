@@ -13,11 +13,6 @@ import OHHTTPStubs
 class DonutsAPITest: XCTestCase {
   let donutsApi = DonutsAPI()
 
-  override func tearDown() {
-    OHHTTPStubs.removeAllStubs()
-    super.tearDown()
-  }
-
   let todayClaimsEmptyResponse: OHHTTPStubsResponseBlock = { _ in
     return OHHTTPStubsResponse(
       data: "[]".data(using: String.Encoding.utf8)!, // Empty JSON string
@@ -25,7 +20,21 @@ class DonutsAPITest: XCTestCase {
       headers: ["Content-Type": "application/json"]
     )
   }
-  func test_getTodayClaims_whenNoClaimsOnServer_callsCompletionWithUsersList() {
+
+  lazy var todayClaimsFullResponse: OHHTTPStubsResponseBlock =  { _ in
+    return OHHTTPStubsResponse(
+      fileAtPath: OHPathForFile("users.json", type(of: self))!,
+      statusCode: 200,
+      headers: ["Content-Type": "application/json"]
+    )
+  }
+
+  override func tearDown() {
+    OHHTTPStubs.removeAllStubs()
+    super.tearDown()
+  }
+
+  func test_getTodayClaims_whenNoClaimsOnServer_callsCompletionWithUsersEmptyList() {
     expectWithCallbacks(description: "emptyClaims") { expectation in
       donutsApi.getTodayClaims { users in
         XCTAssertTrue(users.isEmpty)
