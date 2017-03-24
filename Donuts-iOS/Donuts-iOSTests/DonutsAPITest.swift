@@ -51,6 +51,7 @@ class DonutsAPITest: XCTestCase {
     expectWithCallbacks(description: "fullClaims") { expectation in
       donutsApi.getTodayClaims { users in
         XCTAssertEqual(2, users.count)
+        XCTAssertEqual(TestUsers.users, users, "Users do not match")
 
         expectation.fulfill()
       }

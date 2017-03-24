@@ -30,4 +30,11 @@ class UserTest: XCTestCase {
     XCTAssert("Be-Bert" == user.name)
     XCTAssert("Be-Bert" == user.displayName)
   }
+
+  func test_equality_withMatchingProperties_isEqual() {
+    let user = User(id: "User1", githubLogin: "Login", name: "User1", displayName: "User1")
+    let user2 = user // copy of the first user
+
+    XCTAssertEqual(user, user2)
+  }
 }
