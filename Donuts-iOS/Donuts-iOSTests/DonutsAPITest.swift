@@ -44,11 +44,11 @@ class DonutsAPITest: XCTestCase {
   }
 
   func test_getTodayClaims_withClaimsOnServer_callsCompletionWithListOfThoseUsers() {
-    expectWithCallbacks(description: "fullClaims") { expectation in
-      stub(condition: OHHTTPStubs.anyRequest(), response: todayClaimsFullResponse)
+    stub(condition: OHHTTPStubs.anyRequest(), response: todayClaimsFullResponse)
 
+    expectWithCallbacks(description: "fullClaims") { expectation in
       donutsApi.getTodayClaims { users in
-        XCTAssertEqual(TestUsers.users, users, "Users do not match Test Data")
+        XCTAssertEqual(2, users.count)
 
         expectation.fulfill()
       }
@@ -101,10 +101,15 @@ struct TestUsers {
 import Alamofire
 
 class DonutsAPI {
-  func getTodayClaims(completion: @escaping ([User]) -> Void) {
+  func getTodayClaims(completion: @escaping ([User]) -> ()) {
     let url = "https://donuts.test/api/v1/claims/today"
     Alamofire.request(url).responseJSON { (response) in
-      completion([User]())
+      if let json = response.result.value as? [[String: Any?]] {
+        let users = json.map { User(fromJSON: $0) }
+        completion(users)
+      } else {
+        completion([User]())
+      }
     }
   }
 }
