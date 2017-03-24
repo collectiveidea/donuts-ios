@@ -11,7 +11,7 @@ import XCTest
 import OHHTTPStubs
 
 class DonutsAPITest: XCTestCase {
-  let donutsApi = DonutsAPI()
+  let donutsApi = DonutsAPI(baseURL: "https://donuts.example.com")
 
   let todayClaimsEmptyResponse: OHHTTPStubsResponseBlock = { _ in
     return OHHTTPStubsResponse(
@@ -71,7 +71,7 @@ class DonutsAPITest: XCTestCase {
         XCTAssertEqual(1, executedRequests.count)
 
         let request = executedRequests.first
-        let expectedURL = "https://donuts.test/api/v1/claims/today"
+        let expectedURL = "https://donuts.example.com/api/v1/claims/today"
         XCTAssertEqual(expectedURL, request?.url?.absoluteString)
         XCTAssertEqual("GET", request?.httpMethod)
 
@@ -104,8 +104,14 @@ struct TestUsers {
 import Alamofire
 
 class DonutsAPI {
+  let baseURL: URL
+
+  init(baseURL: String) {
+    self.baseURL = URL(string: baseURL)!
+  }
+
   func getTodayClaims(completion: @escaping ([User]) -> ()) {
-    let url = "https://donuts.test/api/v1/claims/today"
+    let url = baseURL.appendingPathComponent("/api/v1/claims/today")
     Alamofire.request(url).responseJSON { (response) in
       if let json = response.result.value as? [[String: Any?]] {
         let users = json.map { User(fromJSON: $0) }
