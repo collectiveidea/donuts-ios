@@ -19,6 +19,7 @@
 		A7F1D9651E9BD2DF004763BB /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D9641E9BD2DF004763BB /* UserTest.swift */; };
 		A7F1D9671E9BD345004763BB /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D9661E9BD345004763BB /* XCTestCase+Extensions.swift */; };
 		A7F1D9691E9BD621004763BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D9681E9BD621004763BB /* User.swift */; };
+		A7F1D96B1E9BD9E1004763BB /* DonutsAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D96A1E9BD9E1004763BB /* DonutsAPITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A7F1D9641E9BD2DF004763BB /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		A7F1D9661E9BD345004763BB /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		A7F1D9681E9BD621004763BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A7F1D96A1E9BD9E1004763BB /* DonutsAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsAPITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				A7ADED291DD2483600E8A35D /* Info.plist */,
 				A7F1D9641E9BD2DF004763BB /* UserTest.swift */,
 				A7F1D9661E9BD345004763BB /* XCTestCase+Extensions.swift */,
+				A7F1D96A1E9BD9E1004763BB /* DonutsAPITest.swift */,
 			);
 			path = "Donuts-iOSTests";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F1D9651E9BD2DF004763BB /* UserTest.swift in Sources */,
+				A7F1D96B1E9BD9E1004763BB /* DonutsAPITest.swift in Sources */,
 				A7F1D9671E9BD345004763BB /* XCTestCase+Extensions.swift in Sources */,
 				A7ADED281DD2483600E8A35D /* Donuts_iOSTests.swift in Sources */,
 			);
