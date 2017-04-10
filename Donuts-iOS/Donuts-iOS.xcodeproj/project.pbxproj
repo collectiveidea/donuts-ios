@@ -20,6 +20,8 @@
 		A7F1D9671E9BD345004763BB /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D9661E9BD345004763BB /* XCTestCase+Extensions.swift */; };
 		A7F1D9691E9BD621004763BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D9681E9BD621004763BB /* User.swift */; };
 		A7F1D96B1E9BD9E1004763BB /* DonutsAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D96A1E9BD9E1004763BB /* DonutsAPITest.swift */; };
+		A7F1D96F1E9BF593004763BB /* DonutsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D96E1E9BF593004763BB /* DonutsAPI.swift */; };
+		A7F1D9711E9BFEAC004763BB /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F1D96C1E9BE034004763BB /* OHHTTPStubs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		A7F1D9661E9BD345004763BB /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		A7F1D9681E9BD621004763BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7F1D96A1E9BD9E1004763BB /* DonutsAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsAPITest.swift; sourceTree = "<group>"; };
+		A7F1D96C1E9BE034004763BB /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		A7F1D96E1E9BF593004763BB /* DonutsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F1D9711E9BFEAC004763BB /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A7F1D9681E9BD621004763BB /* User.swift */,
+				A7F1D96E1E9BF593004763BB /* DonutsAPI.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 		A7CB70671E896DD300CB16C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7F1D96C1E9BE034004763BB /* OHHTTPStubs.framework */,
 				A7CB70681E896DD300CB16C2 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -220,6 +227,7 @@
 				A7ADED1F1DD2483600E8A35D /* Sources */,
 				A7ADED201DD2483600E8A35D /* Frameworks */,
 				A7ADED211DD2483600E8A35D /* Resources */,
+				A7F1D9721E9BFF5A004763BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -338,6 +346,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		A7F1D9721E9BFF5A004763BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -346,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */,
+				A7F1D96F1E9BF593004763BB /* DonutsAPI.swift in Sources */,
 				A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */,
 				A7F1D9691E9BD621004763BB /* User.swift in Sources */,
 			);
@@ -537,6 +560,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOSTests";
@@ -551,6 +578,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Donuts-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.collectiveidea.Donuts-iOSTests";
