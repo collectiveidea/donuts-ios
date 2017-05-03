@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70441561E9D43170045E9DD /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = A70441551E9D43170045E9DD /* users.json */; };
 		A7ADED131DD2483600E8A35D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED121DD2483600E8A35D /* AppDelegate.swift */; };
 		A7ADED151DD2483600E8A35D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ADED141DD2483600E8A35D /* ViewController.swift */; };
 		A7ADED181DD2483600E8A35D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7ADED161DD2483600E8A35D /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70441551E9D43170045E9DD /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		A7ADED0F1DD2483600E8A35D /* Donuts-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Donuts-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ADED121DD2483600E8A35D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ADED141DD2483600E8A35D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A7F1D9621E9BD2A6004763BB /* user.json */,
+				A70441551E9D43170045E9DD /* users.json */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70441561E9D43170045E9DD /* users.json in Resources */,
 				A7F1D9631E9BD2A6004763BB /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

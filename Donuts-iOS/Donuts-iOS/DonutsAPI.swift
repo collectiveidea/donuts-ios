@@ -9,11 +9,22 @@
 import Alamofire
 
 class DonutsAPI {
+    var baseURL: String
+    
+    init(baseURL: String) {
+        self.baseURL = baseURL
+    }
+    
     func getTodayClaims(_ completion: @escaping ([User]) ->()) {
-        let url = "https://donuts.test/api/v1/claims/today"
+        let url = "\(baseURL)/api/v1/claims/today"
         
         Alamofire.request(url).responseJSON { (response) in
-            completion([User]())
+            if let json = response.result.value as? [[String: Any]] {
+                let users = json.map { User(fromJSON: $0) }
+                completion(users)
+            } else {
+                completion([User]())
+            }
         }
     }
 }

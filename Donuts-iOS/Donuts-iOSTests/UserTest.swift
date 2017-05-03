@@ -25,4 +25,11 @@ class UserTest: XCTestCase {
         XCTAssert("Be-Bert" == user.name)
         XCTAssert("Be-Bert" == user.displayName)
     }
+    
+    func testUsersNotEqual() {
+        let user1 = User()
+        let user2 = User(id: "foob", githubLogin: "bar", name: "baz", displayName: "bopp")
+        
+        XCTAssertNotEqual(user1, user2)
+    }
 }
